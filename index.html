@@ -1,0 +1,227 @@
+<html>
+<head>
+
+</head>
+<body>
+Hii
+</body>
+<script>
+    //console.log("Hello world");
+    // alert("Hello world");
+    //document.write("Hello world")
+
+    // var <variable_name> = <constant_value>;
+        //Javascript is loosely typed langauge + Interpreted language
+        var a = 10;
+        var b = true;
+        var c = 2.4;
+        var d = {};
+        var e;//undefined 
+        var f = null;//Object
+
+// typeof : To check the type of varible
+console.log("The type of a is ",typeof a)
+console.log("The type of b is ",typeof b)
+console.log("The type of c is ",typeof c)
+console.log("The type of d is ",typeof d)
+console.log("The type of e is ",typeof e)
+console.log("The type of f is ",typeof f)
+
+
+//Number , String , Boolean , undefined , null
+
+//Difference between the undefined and null
+//value wise both are same (Both act as false)
+//typewise they are different (type of undefined is undefined + type of null is object)
+//== equalto checks value
+//=== checks value + type
+if(e==f){
+console.log('undefined is equal to null')
+}
+
+if(e===f){
+    console.log('With === e is  equal to f')
+}
+
+var a1 = 3;
+var a2 = 4;
+var a3 = a1+a2;
+console.log('The sum is ',a3)
+
+//+ , - , * ,/ , %
+
+
+//Find odd or even
+var n = 10;
+if(n%2==0){
+    console.log('Even')
+}
+else{
+    console.log('Odd')
+}
+
+//Find average of 5 subjects
+var p = 90;
+var c = 99;
+var m = 100;
+var h = 91;
+var e = 95;
+var avg = (p+c+m+h+e)/5.0;
+if(avg>=60 && avg<=100){
+    console.log('First division')
+}
+else if(avg>=50 && avg<60){
+console.log("Second division")
+}
+else if(avg>=35 && avg<50){
+console.log('Third division')
+}
+else{
+    console.log('Fail')
+}
+//Conditional Operator
+//(<condition>)?statement1 : statement2
+var n2 = 10;
+(n2%2==0)?console.log('The number is even'): console.log('The number is odd')
+
+//Loop in javascript
+//While
+var i = 1;//initialization
+while(i<=10){//condition
+    console.log('The number is ',i);
+    i++;//increment
+}
+//For loop
+for(var i = 1;i<=10;i++){
+    console.log('The for value is ',i)
+}
+//do-while loop
+var i = 100;
+do{
+console.log('do-while value is ',i)
+i++;
+}while(i<=10);
+
+//functions in javascript
+// function <function_name>(){
+
+// }
+// <function_name>();
+function show(){//named function in javascript
+console.log('Inside the show function')
+}
+show();
+show();
+
+//function containing parameters
+function add(a,b){
+    var c = a+b;
+    console.log('The sum is ',c)
+}
+add(2,5);
+//function returning the value
+function add_i1(a,b){
+    return a+b;
+}
+
+var ans1 = add_i1(2,5)
+console.log('The sum is ',ans1+5)
+
+//hosting in javascript function : IT JUST PUTS ALL DEFINATION TO THE TOP OF SCOPE
+//Hoisting always takes place for the named function
+test();
+function test(){
+    console.log('Inside the test function')
+}
+
+//anonomous function : function which does not have any name
+//Hoisting never takes place for the anonomous function
+
+var test2 = function(){
+console.log('Inside the test 2')
+}
+test2();
+
+console.log(typeof test2)
+//typeof function is always function
+console.log(test2)
+//without the parenthesis sign it will print the function defination
+
+
+//Array 
+var arr1 = [10,23,56,87];
+// console.log(arr1[0])
+// var arr2 = new Array(1,2);
+// console.log(arr2);
+//add to end of arr1 : push
+arr1.push(100)
+arr1.push(110)
+console.log(arr1)
+//remove from end
+arr1.pop();
+console.log(arr1)
+//add at first position
+arr1.shift(121)
+console.log(arr1)
+//add a element to first position
+arr1.unshift(1000)
+console.log(arr1)
+//remove from particular index
+//splice
+arr1.splice(2,1)
+console.log(arr1)
+//add at particular index
+arr1.splice(2,-1,121)
+console.log(arr1)
+
+//Iteration through javascript array
+var arr3 = [10,20,30,45];
+// for(var i = 0;i<arr3.length;i++){
+//     console.log(arr3[i])
+// }
+//foreach method
+
+arr3.forEach(function(item){
+console.log(item)
+})
+
+// map method to format the array
+arr3=arr3.map(function(item){
+    return item*2;
+})
+console.log(arr3);
+
+var arr4 = [
+    {name : 'Mohan',age : 21,sal : 100},
+    {name : 'Sohan',age : 22,sal : 200},
+    {name : 'Rohan',age : 23,sal : 99},
+]
+
+var name_list=arr4.map(function(item){
+    return item.name;
+})
+console.log(name_list)
+
+//filter
+//find all employess whose sal is less then 110
+var less_payment = arr4.filter(function(item){
+    return item.sal<110;
+})
+console.log(less_payment)
+
+//find
+//return only first occurence
+var find_less_payment = arr4.find(function(item){
+    return item.sal<110;
+})
+console.log(find_less_payment)
+
+//reduce
+var total_sal=arr4.reduce(function(total,item){
+return total+item.sal;
+},0);
+console.log('The total salary is ',total_sal)
+
+
+</script>
+</html>
